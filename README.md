@@ -1,6 +1,6 @@
 # Toy Robot Simulator
 
-This repository contains my implementation of `Toy Robot Simulator` coding challenge.
+This repository contains my implementation of `Toy Robot Simulator`[https://github.com/nandowalter-lm/toy_robot#toy-robot-simulator] coding challenge.
 
 ## Assumptions
 
