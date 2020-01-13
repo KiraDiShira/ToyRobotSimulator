@@ -9,7 +9,7 @@ namespace ToyRobotSimulator.Fixtures
     public class WestManagerFixtures
     {
         [Test]
-        public void Facing_ReadFacing_WestFacing()
+        public void CardinalDirection_ReadCardinalDirection_WestCardinalDirection()
         {
             //Arrange           
             ICardinalDirectionManager westFacingManager = new WestManager();

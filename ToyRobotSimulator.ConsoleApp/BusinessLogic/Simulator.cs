@@ -35,7 +35,6 @@ namespace ToyRobotSimulator.ConsoleApp.BusinessLogic
                     _errorReporter.Send(exception);
                 }
             }
-
             return toyRobot?.GetState();
         }
 

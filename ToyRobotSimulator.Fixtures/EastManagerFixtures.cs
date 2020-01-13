@@ -9,7 +9,7 @@ namespace ToyRobotSimulator.Fixtures
     public class EastFacingManagerFixtures
     {
         [Test]
-        public void Facing_ReadFacing_EastFacing()
+        public void CardinalDirection_ReadCardinalDirection_East()
         {
             //Arrange           
             ICardinalDirectionManager cardinalDirectionManager = new EastManager();
@@ -66,10 +66,10 @@ namespace ToyRobotSimulator.Fixtures
         public void TurnRight_FromEast_ToSouth()
         {
             //Arrange
-            ICardinalDirectionManager eastFacingManager = new EastManager();
+            ICardinalDirectionManager cardinalDirectionManager = new EastManager();
 
             //Act
-            ICardinalDirectionManager rightFacing = eastFacingManager.TurnRight();
+            ICardinalDirectionManager rightFacing = cardinalDirectionManager.TurnRight();
 
             //Assert
             Assert.AreEqual(CardinalDirection.SOUTH, rightFacing.CardinalDirection);
@@ -79,10 +79,10 @@ namespace ToyRobotSimulator.Fixtures
         public void TurnLeft_FromEast_ToNorth()
         {
             //Arrange
-            ICardinalDirectionManager eastFacingManager = new EastManager();
+            ICardinalDirectionManager cardinalDirectionManager = new EastManager();
 
             //Act
-            ICardinalDirectionManager leftFacing = eastFacingManager.TurnLeft();
+            ICardinalDirectionManager leftFacing = cardinalDirectionManager.TurnLeft();
 
             //Assert
             Assert.AreEqual(CardinalDirection.NORTH, leftFacing.CardinalDirection);

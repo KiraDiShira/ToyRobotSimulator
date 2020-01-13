@@ -22,6 +22,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act and Assert
             ArgumentNullException exception = Assert.Throws<ArgumentNullException>(() => toyRobotSimulator.Run(commands));
             Assert.AreEqual("Value cannot be null. (Parameter 'commands')", exception.Message);
@@ -42,6 +43,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                 new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -65,6 +67,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -87,6 +90,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -107,6 +111,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                 new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -128,6 +133,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -148,6 +154,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                  new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -169,6 +176,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                 new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -210,6 +218,7 @@ namespace ToyRobotSimulator.Fixtures
             var errorReporterMock = new Mock<IErrorReporter>();
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -231,6 +240,7 @@ namespace ToyRobotSimulator.Fixtures
 
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -253,6 +263,7 @@ namespace ToyRobotSimulator.Fixtures
 
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -295,6 +306,7 @@ namespace ToyRobotSimulator.Fixtures
 
             var toyRobotSimulator =
                             new Simulator(placeManagerMock.Object, errorReporterMock.Object);
+            
             //Act 
             ToyRobotState toyRobotState = toyRobotSimulator.Run(commands);
 
@@ -352,6 +364,5 @@ namespace ToyRobotSimulator.Fixtures
             Assert.AreEqual(3, toyRobotState.Y);
             Assert.AreEqual(CardinalDirection.EAST, toyRobotState.CardinalDirection);
         }
-
     }
 }

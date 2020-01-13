@@ -9,7 +9,7 @@ namespace ToyRobotSimulator.Fixtures
     public class SouthManagerFixtures
     {
         [Test]
-        public void Facing_ReadFacing_SouthFacing()
+        public void CardinalDirection_ReadCardinalDirection_South()
         {
             //Arrange           
             ICardinalDirectionManager southFacingManager = new SouthManager();

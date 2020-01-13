@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using ToyRobotSimulator.ConsoleApp.BusinessLogic.CardinalDirectionManager;
 using ToyRobotSimulator.ConsoleApp.Enums;
 using ToyRobotSimulator.ConsoleApp.ParameterObjects;
@@ -11,13 +9,13 @@ namespace ToyRobotSimulator.Fixtures
     public class NorthManagerFixtures
     {
         [Test]
-        public void Facing_ReadFacing_NorthFacing()
+        public void CardinalDirection_ReadCardinalDirection_North()
         {
             //Arrange           
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act
-            CardinalDirection facing = northFacingManager.CardinalDirection;
+            CardinalDirection facing = cardinalDirectionManager.CardinalDirection;
 
             //Assert
             Assert.AreEqual(CardinalDirection.NORTH, facing);
@@ -28,10 +26,10 @@ namespace ToyRobotSimulator.Fixtures
         {
             //Arrange
             var currentPosition = new Position(1, 1);
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act
-            Position finalPosition = northFacingManager.TryMoveAhead(currentPosition);
+            Position finalPosition = cardinalDirectionManager.TryMoveAhead(currentPosition);
 
             //Assert
             Assert.AreEqual(1, finalPosition.X);
@@ -43,10 +41,10 @@ namespace ToyRobotSimulator.Fixtures
         {
             //Arrange
             var currentPosition = new Position(0, 4);
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act
-            Position finalPosition = northFacingManager.TryMoveAhead(currentPosition);
+            Position finalPosition = cardinalDirectionManager.TryMoveAhead(currentPosition);
 
             //Assert
             Assert.AreEqual(0, finalPosition.X);
@@ -57,20 +55,21 @@ namespace ToyRobotSimulator.Fixtures
         public void TryMoveAhead_NullPosition_ThrowArgumentNullException()
         {
             //Arrange
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act and Assert
-            Assert.Throws<ArgumentNullException>(() => northFacingManager.TryMoveAhead(null));
+            var exception = Assert.Throws<ArgumentNullException>(() => cardinalDirectionManager.TryMoveAhead(null));
+            Assert.AreEqual("Value cannot be null. (Parameter 'position')", exception.Message);
         }
 
         [Test]
         public void TurnRight_FromNorth_ToEast()
         {
             //Arrange
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act
-            ICardinalDirectionManager rightFacing = northFacingManager.TurnRight();
+            ICardinalDirectionManager rightFacing = cardinalDirectionManager.TurnRight();
 
             //Assert
             Assert.AreEqual(CardinalDirection.EAST, rightFacing.CardinalDirection);
@@ -80,10 +79,10 @@ namespace ToyRobotSimulator.Fixtures
         public void TurnLeft_FromNorth_ToWest()
         {
             //Arrange
-            ICardinalDirectionManager northFacingManager = new NorthManager();
+            ICardinalDirectionManager cardinalDirectionManager = new NorthManager();
 
             //Act
-            ICardinalDirectionManager leftFacing = northFacingManager.TurnLeft();
+            ICardinalDirectionManager leftFacing = cardinalDirectionManager.TurnLeft();
 
             //Assert
             Assert.AreEqual(CardinalDirection.WEST, leftFacing.CardinalDirection);
