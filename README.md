@@ -2,7 +2,7 @@
 
 This repository contains my implementation of [Toy Robot Simulator](https://github.com/nandowalter-lm/toy_robot#toy-robot-simulator) coding challenge.
 
-# How to insert commands
+## How to insert commands
 
 To write `commands` you need to create a `commands.txt` file and place it in the following path (depending if you are building the solution in Debug or Release mode):
 
@@ -17,7 +17,7 @@ ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0
 ```
 As an example, I have attached a `command.txt` file in the root of this repository.
 
-# Test project
+## Test project
 
 The solution has a `ToyRobotSimulator.Fixtures` project which includes 62 unit tests.
 
