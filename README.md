@@ -2,7 +2,7 @@
 
 This repository contains my implementation of [Toy Robot Simulator](https://github.com/nandowalter-lm/toy_robot#toy-robot-simulator) coding challenge.
 
-# How to launch the app
+## How to launch the app
 
 ```
 git clone https://github.com/KiraDiShira/ToyRobotSimulator.git
@@ -14,7 +14,16 @@ dotnet run
 
 ## How to insert commands
 
-You can edit a `command.txt` file in `ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\Resources` path
+If you don't launch the app you need to build the project:
+
+```
+git clone https://github.com/KiraDiShira/ToyRobotSimulator.git
+cd ToyRobotSimulator/ToyRobotSimulator.ConsoleApp/
+dotnet restore
+dotnet build --configuration release
+```
+
+Than you can edit a `command.txt` file in `ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\Resources` path.
 
 ## Test project
 
