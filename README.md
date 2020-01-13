@@ -2,24 +2,39 @@
 
 This repository contains my implementation of [Toy Robot Simulator](https://github.com/nandowalter-lm/toy_robot#toy-robot-simulator) coding challenge.
 
+## How to launch the app
+
+```
+git clone https://github.com/KiraDiShira/ToyRobotSimulator.git
+cd ToyRobotSimulator/ToyRobotSimulator.ConsoleApp/
+dotnet restore
+dotnet build --configuration release
+dotnet run 
+```
+
 ## How to insert commands
 
-To write `commands` you need to create a `commands.txt` file and place it in the following path (depending if you are building the solution in Debug or Release mode):
+If you don't launch the app you need to build the project:
 
 ```
-ToyRobotSimulator.ConsoleApp\bin\Debug\netcoreapp3.0
+git clone https://github.com/KiraDiShira/ToyRobotSimulator.git
+cd ToyRobotSimulator/ToyRobotSimulator.ConsoleApp/
+dotnet restore
+dotnet build --configuration release
 ```
 
-or
-
-```
-ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0
-```
-As an example, I have attached a `command.txt` file in the root of this repository.
+Than you can edit a `command.txt` file in `ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\Resources` path.
 
 ## Test project
 
-The solution has a `ToyRobotSimulator.Fixtures` project which includes 62 unit tests.
+The solution has a `ToyRobotSimulator.Fixtures` project which includes 63 unit tests.
+
+To launch all tests:
+
+```
+cd ToyRobotSimulator/ToyRobotSimulator.Fixtures/
+dotnet test
+```
 
 ## Assumptions
 
