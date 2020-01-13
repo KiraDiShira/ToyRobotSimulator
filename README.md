@@ -8,6 +8,6 @@ I have implemented an `ErrorReporter` class whose responsability is to send all 
 
 I didn't implement the code for sending the exception because I assume this is out of scope.
 
-## RunTime analysis
+## Runtime analysis
 
 Tha simulator alghoritm has a `O(N)` runtime where `N` is the number of commands.
