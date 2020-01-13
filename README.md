@@ -14,6 +14,8 @@ or
 ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0
 ```
 
+The solution has a `ToyRobotSimulator.Fixtures` project which includes 62 unit tests.
+
 ## Assumptions
 
 I have implemented an `ErrorReporter` class whose responsability is to send all app exceptions to an `Exception monitoring` tool (like `Sentry`, `Fabric`, or `Rollbar`).
