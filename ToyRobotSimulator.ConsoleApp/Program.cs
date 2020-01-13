@@ -22,8 +22,7 @@ namespace ToyRobotSimulator.ConsoleApp
             }
             catch (Exception exception)
             {
-                errorReporter.Send(exception);
-                Console.WriteLine($"{exception}");
+                errorReporter.Send(exception);               
             }
             Console.Read();
         }
