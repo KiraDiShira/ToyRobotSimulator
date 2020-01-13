@@ -29,4 +29,4 @@ I didn't implement the code for sending the exception because I assumed this is 
 
 ## Runtime analysis
 
-Tha simulator alghoritm has a `O(N)` runtime where `N` is the number of commands.
+Tha simulator algorithm has a `O(N)` runtime where `N` is the number of commands.
