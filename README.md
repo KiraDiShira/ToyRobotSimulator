@@ -6,7 +6,7 @@ This repository contains my implementation of [Toy Robot Simulator](https://gith
 
 I have implemented an `ErrorReporter` class whose responsability is to send all app exceptions to an `Exception monitoring` tool (like `Sentry`, `Fabric`, or `Rollbar`).
 
-I didn't implement the code for sending the exception because I assume this is out of scope.
+I didn't implement the code for sending the exception because I assumed this is out of scope.
 
 ## Runtime analysis
 
