@@ -19,7 +19,7 @@ As an example, I have attached a `command.txt` file in the root of this reposito
 
 ## Test project
 
-The solution has a `ToyRobotSimulator.Fixtures` project which includes 62 unit tests.
+The solution has a `ToyRobotSimulator.Fixtures` project which includes 63 unit tests.
 
 ## Assumptions
 
