@@ -13,11 +13,11 @@ namespace ToyRobotSimulator.Fixtures
             //Arrange           
             var commandsFile = @"PLACE 1,1,NORTH";
             var mockFileReader = new Mock<IFileReader>();
-            mockFileReader.Setup(mockFileReader => mockFileReader.ReadAllText(It.IsAny<string>())).Returns(commandsFile);
+            mockFileReader.Setup(mockFileReader => mockFileReader.ReadAllText(It.IsAny<string>(), It.IsAny<string>())).Returns(commandsFile);
             CommandsReader commandsReader = new CommandsReader(mockFileReader.Object);
 
             //Act
-            string[] commands = commandsReader.GetCommands("filePath");
+            string[] commands = commandsReader.GetCommands("directory", "filePath");
 
             //Assert
             Assert.AreEqual(1, commands.Length);
@@ -31,11 +31,11 @@ namespace ToyRobotSimulator.Fixtures
             var commandsFile = @"PLACE 1,1,NORTH
 MOVE";
             var mockFileReader = new Mock<IFileReader>();
-            mockFileReader.Setup(mockFileReader => mockFileReader.ReadAllText(It.IsAny<string>())).Returns(commandsFile);
+            mockFileReader.Setup(mockFileReader => mockFileReader.ReadAllText(It.IsAny<string>(), It.IsAny<string>())).Returns(commandsFile);
             CommandsReader commandsReader = new CommandsReader(mockFileReader.Object);
 
             //Act
-            string[] commands = commandsReader.GetCommands("filePath");
+            string[] commands = commandsReader.GetCommands("directory", "filePath");
 
             //Assert
             Assert.AreEqual(2, commands.Length);
@@ -44,15 +44,27 @@ MOVE";
         }
 
         [Test]
-        public void GetCommands_NoFile_ThrowsException()
+        public void GetCommands_NoDirectory_ThrowsException()
         {
             //Arrange
             var mockFileReader = new Mock<IFileReader>();         
             CommandsReader commandsReader = new CommandsReader(mockFileReader.Object);
 
             //Act and Assert
-            ArgumentNullException exception = Assert.Throws<ArgumentNullException>(() => commandsReader.GetCommands(null));
-            Assert.AreEqual("Value cannot be null. (Parameter 'filePath')", exception.Message);
+            ArgumentNullException exception = Assert.Throws<ArgumentNullException>(() => commandsReader.GetCommands(null, null));
+            Assert.AreEqual("Value cannot be null. (Parameter 'directory')", exception.Message);
+        }
+
+        [Test]
+        public void GetCommands_NoFile_ThrowsException()
+        {
+            //Arrange
+            var mockFileReader = new Mock<IFileReader>();
+            CommandsReader commandsReader = new CommandsReader(mockFileReader.Object);
+
+            //Act and Assert
+            ArgumentNullException exception = Assert.Throws<ArgumentNullException>(() => commandsReader.GetCommands("Resources", null));
+            Assert.AreEqual("Value cannot be null. (Parameter 'fileName')", exception.Message);
         }
     }
 }

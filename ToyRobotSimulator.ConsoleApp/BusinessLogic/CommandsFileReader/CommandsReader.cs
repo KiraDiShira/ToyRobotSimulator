@@ -11,14 +11,19 @@ namespace ToyRobotSimulator.ConsoleApp.BusinessLogic.CommandsFileReader
             _fileReader = fileReader;
         }
 
-        public string[] GetCommands(string filePath)
+        public string[] GetCommands(string directory, string fileName)
         {
-            if (filePath is null)
+            if (directory is null)
             {
-                throw new ArgumentNullException(nameof(filePath));
+                throw new ArgumentNullException(nameof(directory));
             }
 
-            string commandsFile = _fileReader.ReadAllText(filePath);
+            if (fileName is null)
+            {
+                throw new ArgumentNullException(nameof(fileName));
+            }
+
+            string commandsFile = _fileReader.ReadAllText(directory, fileName);
             string[] commands = commandsFile.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
             return commands;
         }

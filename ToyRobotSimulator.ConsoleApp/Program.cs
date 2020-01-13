@@ -13,8 +13,8 @@ namespace ToyRobotSimulator.ConsoleApp
             IErrorReporter errorReporter = new ErrorReporter();
             try
             {
-                var commandsReader = new CommandsReader(new SystemIoFileReader());
-                string[] commands = commandsReader.GetCommands("commands.txt");
+                var commandsReader = new CommandsReader(new SystemIoFileReader());                
+                string[] commands = commandsReader.GetCommands("Resources","commands.txt");
 
                 IPlaceManager placeManager = new PlaceManager();
                 var toyRobotSimulator = new Simulator(placeManager, errorReporter);

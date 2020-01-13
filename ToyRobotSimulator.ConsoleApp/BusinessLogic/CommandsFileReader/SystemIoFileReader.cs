@@ -4,14 +4,16 @@ namespace ToyRobotSimulator.ConsoleApp.BusinessLogic.CommandsFileReader
 {
     public class SystemIoFileReader : IFileReader
     {
-        public string ReadAllText(string path)
+        public string ReadAllText(string directory, string path)
         {
             if (path is null)
             {
                 throw new System.ArgumentNullException(nameof(path));
             }
 
-            return File.ReadAllText(path);
+            string filePath = Path.Combine(directory, path);
+
+            return File.ReadAllText(filePath);
         }
     }
 }
