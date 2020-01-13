@@ -4,6 +4,13 @@ This repository contains my implementation of [Toy Robot Simulator](https://gith
 
 ## How to insert commands
 
+```
+git clone https://github.com/KiraDiShira/ToyRobotSimulator.git
+cd ToyRobotSimulator/ToyRobotSimulator.ConsoleApp/
+dotnet restore
+dotnet build --configuration release
+dotnet run 
+```
 To write `commands` you need to create a `commands.txt` file and place it in the following path (depending if you are building the solution in Debug or Release mode):
 
 ```
