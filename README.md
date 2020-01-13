@@ -29,6 +29,13 @@ Than you can edit a `command.txt` file in `ToyRobotSimulator\ToyRobotSimulator.C
 
 The solution has a `ToyRobotSimulator.Fixtures` project which includes 63 unit tests.
 
+To launch all tests:
+
+```
+cd ToyRobotSimulator/ToyRobotSimulator.Fixtures/
+dotnet test
+```
+
 ## Assumptions
 
 I have implemented an `ErrorReporter` class whose responsability is to send all app exceptions to an `Exception monitoring` tool (like `Sentry`, `Fabric`, or `Rollbar`).
