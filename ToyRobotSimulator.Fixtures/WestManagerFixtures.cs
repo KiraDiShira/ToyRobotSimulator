@@ -12,10 +12,10 @@ namespace ToyRobotSimulator.Fixtures
         public void CardinalDirection_ReadCardinalDirection_WestCardinalDirection()
         {
             //Arrange           
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act
-            CardinalDirection facing = westFacingManager.CardinalDirection;
+            CardinalDirection facing = cardinalDirectionManager.CardinalDirection;
 
             //Assert
             Assert.AreEqual(CardinalDirection.WEST, facing);
@@ -26,10 +26,10 @@ namespace ToyRobotSimulator.Fixtures
         {
             //Arrange
             var currentPosition = new Position(1, 1);
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act
-            Position finalPosition = westFacingManager.TryMoveAhead(currentPosition);
+            Position finalPosition = cardinalDirectionManager.TryMoveAhead(currentPosition);
 
             //Assert
             Assert.AreEqual(0, finalPosition.X);
@@ -41,10 +41,10 @@ namespace ToyRobotSimulator.Fixtures
         {
             //Arrange
             var currentPosition = new Position(0, 0);
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act
-            Position finalPosition = westFacingManager.TryMoveAhead(currentPosition);
+            Position finalPosition = cardinalDirectionManager.TryMoveAhead(currentPosition);
 
             //Assert
             Assert.AreEqual(0, finalPosition.X);
@@ -55,20 +55,20 @@ namespace ToyRobotSimulator.Fixtures
         public void TryMoveAhead_NullPosition_ThrowArgumentNullException()
         {
             //Arrange
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act and Assert
-            Assert.Throws<ArgumentNullException>(() => westFacingManager.TryMoveAhead(null));
+            Assert.Throws<ArgumentNullException>(() => cardinalDirectionManager.TryMoveAhead(null));
         }
 
         [Test]
         public void TurnRight_FromWest_ToNorth()
         {
             //Arrange
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act
-            ICardinalDirectionManager rightFacing = westFacingManager.TurnRight();
+            ICardinalDirectionManager rightFacing = cardinalDirectionManager.TurnRight();
 
             //Assert
             Assert.AreEqual(CardinalDirection.NORTH, rightFacing.CardinalDirection);
@@ -78,10 +78,10 @@ namespace ToyRobotSimulator.Fixtures
         public void TurnLeft_FromWest_ToSouth()
         {
             //Arrange
-            ICardinalDirectionManager westFacingManager = new WestManager();
+            ICardinalDirectionManager cardinalDirectionManager = new WestManager();
 
             //Act
-            ICardinalDirectionManager leftFacing = westFacingManager.TurnLeft();
+            ICardinalDirectionManager leftFacing = cardinalDirectionManager.TurnLeft();
 
             //Assert
             Assert.AreEqual(CardinalDirection.SOUTH, leftFacing.CardinalDirection);
