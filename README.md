@@ -13,16 +13,18 @@ dotnet restore
 dotnet build --configuration release
 ```
 
-Copy the `commands.txt` file into the path:
+Go to the path
 
 ```
 ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\
 ```
+
+And set the commands file path in the `appsettings.json` file.
 
 Finally:
 
 ```
-ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\
+cd ToyRobotSimulator/ToyRobotSimulator.ConsoleApp/
 dotnet run 
 ```
 
