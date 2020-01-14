@@ -14,7 +14,7 @@ namespace ToyRobotSimulator.ConsoleApp
             try
             {
                 var commandsReader = new CommandsReader(new SystemIoFileReader());                
-                string[] commands = commandsReader.GetCommands("Resources","commands.txt");
+                string[] commands = commandsReader.GetCommands("commands.txt");
 
                 IPlaceManager placeManager = new PlaceManager();
                 var toyRobotSimulator = new Simulator(placeManager, errorReporter);

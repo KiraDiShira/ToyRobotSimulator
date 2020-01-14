@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ToyRobotSimulator.ConsoleApp
+﻿namespace ToyRobotSimulator.ConsoleApp
 {
     public class Constants
     {
