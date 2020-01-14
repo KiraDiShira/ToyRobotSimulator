@@ -22,6 +22,7 @@ ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\
 Finally:
 
 ```
+ToyRobotSimulator\ToyRobotSimulator.ConsoleApp\bin\Release\netcoreapp3.0\
 dotnet run 
 ```
 
