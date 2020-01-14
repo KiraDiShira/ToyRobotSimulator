@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
+using System.IO;
 using ToyRobotSimulator.ConsoleApp.ApplicationLogic;
 using ToyRobotSimulator.ConsoleApp.BusinessLogic;
 using ToyRobotSimulator.ConsoleApp.BusinessLogic.Commands;
@@ -15,8 +16,8 @@ namespace ToyRobotSimulator.ConsoleApp
             try
             {
                 IConfiguration config = new ConfigurationBuilder()
-                    .AddJsonFile("appsettings.json", true, true)
-                    .Build();
+         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+         .Build();
 
                 var commandsReader = new CommandsReader(new SystemIoFileReader());
                 string[] commands = commandsReader.GetCommands(config["filePath"]);
